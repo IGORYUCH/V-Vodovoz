@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Vodovoz2"
+                   namespace="Vodovoz2.Model">
+  <class name="Order_"  lazy="false">
+    <id name="Id">
+      <generator class="increment" />
+    </id>
+    <property name="Agent" />
+    <property name="Date"/>
+    <many-to-one name="Author" column="AuthorId"/>
+    <bag name="Goods" inverse="true">
+      <key column="OrderId"/>
+      <one-to-many class="Good"/>
+    </bag>
+  </class>
+  
+</hibernate-mapping>

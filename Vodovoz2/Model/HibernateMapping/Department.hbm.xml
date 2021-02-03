@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Vodovoz2"
+                   namespace="Vodovoz2.Model">
+  <class name="Department" lazy="false">
+    <id name="Id">
+      <generator class="increment" />
+    </id>
+    <property name="Name" not-null="true"/>
+    <many-to-one name="Head" column="HeadId"/>
+    <bag name="Employees" inverse="true">
+      <key column="DepartmentId"/>
+      <one-to-many class="Employee"/>
+    </bag>
+  </class>
+
+</hibernate-mapping>

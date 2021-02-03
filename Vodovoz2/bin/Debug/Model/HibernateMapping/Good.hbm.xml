@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Vodovoz2"
+                   namespace="Vodovoz2.Model">
+  <class name="Good">
+    <id name="Id">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Order" column="OrderId"/>
+    <property name="Name" not-null="true"/>
+    <property name="Amount" not-null="true" />
+    <property name="Price" not-null="true"/>
+  </class>
+
+</hibernate-mapping>
