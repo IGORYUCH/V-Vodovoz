@@ -6,117 +6,174 @@
         xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
         xmlns:local="clr-namespace:Vodovoz2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="315.833" Width="508.015">
+        Title="Veseliy-Vodovoz" Height="312.833" Width="507.421">
     <Grid>
-        <TabControl x:Name="Tabs" HorizontalAlignment="Left" Height="284" VerticalAlignment="Top" Width="499">
+        <TabControl x:Name="Tabs">
             <TabItem x:Name="Tab1" Header="Сотрудники">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,0,2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="136*"/>
-                        <ColumnDefinition Width="507*"/>
-                    </Grid.ColumnDefinitions>
-                    <ComboBox x:Name="Employees_Combo" HorizontalAlignment="Left" Margin="41,14,0,0" VerticalAlignment="Top" Width="321" Grid.Column="1" Height="22" SelectionChanged="EmployeesComboSelectionChanged">
-                    </ComboBox>
-                    <Label Content="Выберите сотрудника" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="26" Width="130"/>
-                    <Grid x:Name="Buttons_grid" HorizontalAlignment="Left" Height="58" Margin="10,161,0,0" VerticalAlignment="Top" Width="446" Grid.ColumnSpan="2">
+                    <Grid x:Name="Buttons_grid" Margin="10,161,10,0" Height="41" VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0*"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+
+                            <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="Change_button" Content="Изменить" HorizontalAlignment="Center" Margin="10,22,361,0" VerticalAlignment="Top" Width="75" Height="20" Grid.ColumnSpan="2" Click="ChangeEmployeeButtonClick" RenderTransformOrigin="1.249,0.45"/>
-                        <Button x:Name="Add_button" Content="Добавить" HorizontalAlignment="Center" Margin="130,22,241,0" VerticalAlignment="Top" Width="75" Click="AddEmployeeButtonClick" Height="20" Grid.ColumnSpan="2"/>
-                        <Button x:Name="Delete_button" Content="Удалить" HorizontalAlignment="Center" Margin="246,22,125,0" VerticalAlignment="Top" Width="75" Height="20" Click="DeleteEmployeeButtonClick" Grid.ColumnSpan="2"/>
+                        <Button x:Name="Change_button" Content="Изменить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Height="20" Click="ChangeEmployeeButtonClick" RenderTransformOrigin="1.249,0.45" Grid.Column="1"/>
+                        <Button x:Name="Add_button" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Click="AddEmployeeButtonClick" Height="20"/>
+                        <Button x:Name="Delete_button" Content="Удалить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Height="20" Click="DeleteEmployeeButtonClick" Grid.Column="3"/>
                     </Grid>
-                    <Grid x:Name="Inputs_grid" HorizontalAlignment="Left" Height="120" Margin="10,41,0,0" VerticalAlignment="Top" Width="457" Grid.ColumnSpan="2">
-                        <Label Content="Фамилия" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="60"/>
-                        <Label Content="Имя" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="26" Width="33"/>
-                        <Label Content="Отчество" HorizontalAlignment="Left" Margin="-1,64,0,0" VerticalAlignment="Top" Height="26" Width="61"/>
-                        <TextBox x:Name="Surname_box" HorizontalAlignment="Left" Height="22" Margin="65,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
-                        <TextBox x:Name="Name_box" HorizontalAlignment="Left" Height="24" Margin="65,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
-                        <TextBox x:Name="Patronymic_box" HorizontalAlignment="Left" Height="24" Margin="65,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
-                        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Top" Height="26" Width="94"/>
-                        <Label Content="Пол" HorizontalAlignment="Left" Margin="214,31,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
-                        <Label Content="Подразделение" HorizontalAlignment="Left" Margin="214,66,0,0" VerticalAlignment="Top" Height="26" Width="96"/>
-                        <TextBox x:Name="Date_box" HorizontalAlignment="Left" Height="23" Margin="316,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141"/>
-                        <ComboBox x:Name="Gender_Box" HorizontalAlignment="Left" Margin="316,33,0,0" VerticalAlignment="Top" Width="141" Height="22">
+                    <Grid Margin="10,49,10,0" Height="112" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="62*"/>
+                            <ColumnDefinition Width="143*"/>
+                            <ColumnDefinition Width="98*"/>
+                            <ColumnDefinition Width="170*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Фамилия" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="60"  Margin="5,6,0,6" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="Surname_box" HorizontalAlignment="Stretch" Height="22"   Margin="5,8" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1"/>
+                        <Label Content="Имя" HorizontalAlignment="Left"   Margin="5,6,0,5" VerticalAlignment="Center" Height="26" Width="33" Grid.Row="1"/>
+                        <TextBox x:Name="Name_box" HorizontalAlignment="Stretch" Height="24"   Margin="5,6,5,7" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                        <Label Content="Отчество" HorizontalAlignment="Left"   Margin="5,5,0,6" VerticalAlignment="Center" Height="26" Width="61" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="Patronymic_box" HorizontalAlignment="Stretch" Height="24"  Margin="5,7,5,6" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+                        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="5,6,0,6" VerticalAlignment="Center" Height="26" Width="94" Grid.Column="2" Grid.ColumnSpan="2"/>
+                        <Label Content="Пол" HorizontalAlignment="Left" Margin="5,6,0,5" VerticalAlignment="Center" Height="26" Width="32" Grid.Column="2" Grid.Row="1"/>
+                        <TextBox x:Name="Date_box" HorizontalAlignment="Stretch" Height="22"  Margin="5,8" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="3"/>
+                        <ComboBox x:Name="Gender_Box" HorizontalAlignment="Stretch"   Margin="5,8,5,7" VerticalAlignment="Center"  Height="22" Grid.Column="3" Grid.Row="1">
                             <ComboBoxItem x:Name="male" Content="male"/>
                             <ComboBoxItem x:Name="female" Content="female"/>
                         </ComboBox>
-                        <ComboBox x:Name="EmployeeDepartmentCombo" HorizontalAlignment="Left" Margin="315,70,0,0" VerticalAlignment="Top" Width="142" Height="22">
-                        </ComboBox>
+                        <Label Content="Подразделение" HorizontalAlignment="Left"  Margin="5,5,0,6" VerticalAlignment="Center" Height="26" Width="96" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        <ComboBox x:Name="EmployeeDepartmentCombo" HorizontalAlignment="Stretch"  Margin="5,7,5,8" VerticalAlignment="Center" Height="22" Grid.Column="3" Grid.Row="2"/>
+                    </Grid>
+                    <Grid Margin="10,8,10,0" Height="41" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="137*"/>
+                            <ColumnDefinition Width="357*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Выберите сотрудника" HorizontalAlignment="Left"  Margin="5,8,0,7" VerticalAlignment="Center" Height="26" Width="130"/>
+                        <ComboBox x:Name="Employees_Combo" HorizontalAlignment="Stretch" Margin="5,10,5,9" VerticalAlignment="Center" Grid.Column="1" Height="22" SelectionChanged="EmployeesComboSelectionChanged"/>
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Подразделения">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Выберите подразделение" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="Departments_Combo" HorizontalAlignment="Left" Margin="167,14,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="DepartmentsComboSelectionChanged" />
-                    <Label Content="Руководитель" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Width="141"/>
-                    <ComboBox x:Name="Head_Combo" HorizontalAlignment="Left" Margin="167,77,0,0" VerticalAlignment="Top" Width="310"/>
-                    <Label Content="Название" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="DepName_box" HorizontalAlignment="Left" Height="23" Margin="167,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
-                    <Grid x:Name="Buttons_grid1" HorizontalAlignment="Left" Height="58" Margin="10,104,0,0" VerticalAlignment="Top" Width="467">
+                    <Grid x:Name="Buttons_grid1" Height="58" Margin="10,125,10,0" VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0*"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="Change_button1" Content="Изменить" HorizontalAlignment="Center" Margin="10,22,361,0" VerticalAlignment="Top" Width="75" Height="20" Grid.ColumnSpan="2" Click="ChangeDepartmentButtonClick" RenderTransformOrigin="1.249,0.45"/>
-                        <Button x:Name="Add_button1" Content="Добавить" HorizontalAlignment="Center" Margin="130,22,241,0" VerticalAlignment="Top" Width="75" Click="AddDepartmentButtonClick" Height="20" Grid.ColumnSpan="2"/>
-                        <Button x:Name="Delete_button1" Content="Удалить" HorizontalAlignment="Center" Margin="246,22,125,0" VerticalAlignment="Top" Width="75" Height="20" Click="DeleteDepartmentButtonClick" Grid.ColumnSpan="2"/>
+                        <Button x:Name="Change_button1" Content="Изменить" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Height="20" Click="ChangeDepartmentButtonClick" RenderTransformOrigin="1.249,0.45" Grid.Column="1"/>
+                        <Button x:Name="Add_button1" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Click="AddDepartmentButtonClick" Height="20"/>
+                        <Button x:Name="Delete_button1" Content="Удалить" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="76" Height="20" Click="DeleteDepartmentButtonClick" Grid.Column="3"/>
                     </Grid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Товары">
-                <Grid Background="#FFE5E5E5">
-                    <Label Content="Выберите товар" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="Goods_Combo" HorizontalAlignment="Left" Margin="114,14,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="GoodsComboSelectionChanged"/>
-                    <Grid HorizontalAlignment="Left" Height="138" Margin="10,41,0,0" VerticalAlignment="Top" Width="336">
-                        <Label Content="Название" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="86"/>
-                        <Label Content="Количество" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="86"/>
-                        <Label Content="Цена" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="86"/>
-                        <Label Content="Номер заказа" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-                        <TextBox x:Name="GoodPriceBox" HorizontalAlignment="Left" Height="23" Margin="101,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
-                        <TextBox x:Name="GoodAmountBox" HorizontalAlignment="Left" Height="23" Margin="101,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
-                        <TextBox x:Name="GoodNameBox" HorizontalAlignment="Left" Height="23" Margin="101,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235"/>
-                        <ComboBox x:Name="OrderIdCombo" HorizontalAlignment="Left" Margin="101,107,0,0" VerticalAlignment="Top" Width="235"/>
-                    </Grid>
-                    <Grid x:Name="Buttons_grid2" HorizontalAlignment="Left" Height="58" Margin="10,184,0,0" VerticalAlignment="Top" Width="424">
+                    <Grid Height="76" Margin="10,51,10,0" VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="23*"/>
+                            <ColumnDefinition Width="96*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="Change_button2" Content="Изменить" HorizontalAlignment="Center" Margin="10,22,21,0" VerticalAlignment="Top" Width="74" Height="20" Grid.ColumnSpan="2" Click="ChangeGoodButtonClick" RenderTransformOrigin="1.249,0.45"/>
-                        <Button x:Name="Add_button2" Content="Добавить" HorizontalAlignment="Center" Margin="15,22,16,0" VerticalAlignment="Top" Width="74" Click="AddGoodButtonClick" Height="20" Grid.Column="2"/>
-                        <Button x:Name="Delete_button2" Content="Удалить" HorizontalAlignment="Center" Margin="21,22,10,0" VerticalAlignment="Top" Width="74" Height="20" Click="DeleteGoodButtonClick" Grid.Column="3"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Название" HorizontalAlignment="Left" Margin="5,6,0,6" VerticalAlignment="Center" Height="26" Width="63"/>
+                        <Label Content="Руководитель" HorizontalAlignment="Left"  Margin="5,6,0,6" VerticalAlignment="Center" Width="141" Grid.Row="1" Grid.ColumnSpan="2" Height="26"/>
+                        <TextBox x:Name="DepName_box" HorizontalAlignment="Stretch" Height="22"  Margin="5,8" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1"/>
+                        <ComboBox x:Name="Head_Combo" HorizontalAlignment="Stretch"  Margin="5,8" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1" Height="22"/>
+                    </Grid>
+                    <Grid Margin="10,10,10,0" Height="41" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="157*"/>
+                            <ColumnDefinition Width="354*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Выберите подразделение" HorizontalAlignment="Left"  Margin="5,5,5,5" VerticalAlignment="Center" Height="26" Width="152"/>
+                        <ComboBox x:Name="Departments_Combo" HorizontalAlignment="Stretch"  Margin="5,5,5,5" VerticalAlignment="Center" SelectionChanged="DepartmentsComboSelectionChanged" Grid.Column="1" Height="22" />
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Заказы">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Выберите заказ" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="Orders_Combo" HorizontalAlignment="Left" Margin="111,14,0,0" VerticalAlignment="Top" Width="208" SelectionChanged="OrdersComboSelectionChanged"/>
-                    <Grid HorizontalAlignment="Left" Height="102" Margin="10,41,0,0" VerticalAlignment="Top" Width="309">
-                        <Label Content="Дата" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="72"/>
-                        <Label Content="Автор" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="72"/>
-                        <Label Content="Контрагент" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                        <ComboBox x:Name="AuthorCombo" HorizontalAlignment="Left" Margin="101,72,0,0" VerticalAlignment="Top" Width="208"/>
-                    </Grid>
-                    <TextBox x:Name="AgentBox" HorizontalAlignment="Left" Height="23" Margin="111,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" />
-                    <TextBox x:Name="DateBox" HorizontalAlignment="Left" Height="23" Margin="111,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" />
-                    <Grid x:Name="Buttons_grid3" HorizontalAlignment="Left" Height="58" Margin="10,148,0,0" VerticalAlignment="Top" Width="424">
+                    <Grid x:Name="Buttons_grid3" Height="58" Margin="10,174,85,0" VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="Change_button3" Content="Изменить" HorizontalAlignment="Center" Margin="10,22,21,0" VerticalAlignment="Top" Width="74" Height="20" Grid.ColumnSpan="2" Click="ChangeOrderButtonClick" RenderTransformOrigin="1.249,0.45"/>
-                        <Button x:Name="Add_button3" Content="Добавить" HorizontalAlignment="Center" Margin="15,22,16,0" VerticalAlignment="Top" Width="74" Click="AddOrderButtonClick" Height="20" Grid.Column="2"/>
-                        <Button x:Name="Delete_button3" Content="Удалить" HorizontalAlignment="Center" Margin="21,22,10,0" VerticalAlignment="Top" Width="74" Height="20" Click="DeleteOrderButtonClick" Grid.Column="3"/>
+                        <Button x:Name="Change_button3" Content="Изменить" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="74" Height="20" Click="ChangeOrderButtonClick" RenderTransformOrigin="1.249,0.45" Grid.Column="1" />
+                        <Button x:Name="Add_button3" Content="Добавить" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="74" Click="AddOrderButtonClick" Height="20"/>
+                        <Button x:Name="Delete_button3" Content="Удалить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74" Height="20" Click="DeleteOrderButtonClick" Grid.Column="2"/>
+                    </Grid>
+                    <Grid Height="114" Margin="10,60,85,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="83*"/>
+                            <ColumnDefinition Width="372*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Автор" HorizontalAlignment="Left"  Margin="5,13,0,13" VerticalAlignment="Center" Width="72" Grid.Row="2" Height="26"/>
+                        <Label Content="Дата" HorizontalAlignment="Left" Margin="5,13,0,13" VerticalAlignment="Center" Width="72" Grid.Row="1" Height="26"/>
+                        <Label Content="Контрагент" HorizontalAlignment="Left"  Margin="5,14,0,13" VerticalAlignment="Center" Height="26" Width="72"/>
+                        <TextBox x:Name="AgentBox" HorizontalAlignment="Stretch" Height="23"  Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" />
+                        <TextBox x:Name="DateBox" HorizontalAlignment="Stretch" Height="23" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="1" />
+                        <ComboBox x:Name="AuthorCombo" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+                    </Grid>
+                    <Grid Height="50" Margin="10,10,85,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="103*"/>
+                            <ColumnDefinition Width="299*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Выберите заказ" HorizontalAlignment="Left"  Margin="5,12,0,11" VerticalAlignment="Center" Height="26" Width="96"/>
+                        <ComboBox x:Name="Orders_Combo" HorizontalAlignment="Stretch" Margin="5,14,5,13" VerticalAlignment="Center"  SelectionChanged="OrdersComboSelectionChanged" Grid.Column="1" Height="22"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Товары">
+                <Grid Background="#FFE5E5E5">
+                    <Grid x:Name="Buttons_grid2" Height="42" Margin="10,202,125,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Change_button2" Content="Изменить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74" Height="20" Click="ChangeGoodButtonClick" RenderTransformOrigin="1.249,0.45"/>
+                        <Button x:Name="Add_button2" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74" Click="AddGoodButtonClick" Height="20" Grid.Column="1"/>
+                        <Button x:Name="Delete_button2" Content="Удалить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74" Height="20" Click="DeleteGoodButtonClick" Grid.Column="2"/>
+                    </Grid>
+                    <Grid Height="154" Margin="10,48,125,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="103*"/>
+                            <ColumnDefinition Width="234*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Название" HorizontalAlignment="Left"  Margin="5,5,5,5" VerticalAlignment="Center" Width="86"/>
+                        <Label Content="Цена" HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Center" Width="86" Grid.Row="1"/>
+                        <Label Content="Количество" HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Center" Width="86" Grid.Row="2"/>
+                        <Label Content="Номер заказа" HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Center" Grid.Row="3"/>
+                        <TextBox x:Name="GoodNameBox" HorizontalAlignment="Stretch" Height="23"  Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1"/>
+                        <TextBox x:Name="GoodPriceBox" HorizontalAlignment="Stretch" Height="23" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+                        <TextBox x:Name="GoodAmountBox" HorizontalAlignment="Stretch" Height="23" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="2"/>
+                        <ComboBox x:Name="OrderIdCombo" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="3"/>
+                    </Grid>
+                    <Grid Height="38" Margin="10,10,125,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="53*"/>
+                            <ColumnDefinition Width="121*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Выберите товар" HorizontalAlignment="Left" Margin="5,6,0,6" VerticalAlignment="Center" Height="26" Width="99"/>
+                        <ComboBox x:Name="Goods_Combo" HorizontalAlignment="Stretch"  Margin="5,8" VerticalAlignment="Center" SelectionChanged="GoodsComboSelectionChanged" Grid.Column="1" Height="22"/>
                     </Grid>
                 </Grid>
             </TabItem>
